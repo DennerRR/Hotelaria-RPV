@@ -49,10 +49,8 @@ public class ReservaController {
         reserva.setId(reservaDTO.getId());
         reserva.setDataInicio(reservaDTO.getDataInicio());
         reserva.setDataFinal(reservaDTO.getDataFinal());
-
         reserva.setValorReserva(reservaDTO.getValorReserva());
         reservaService.saveReserva(reserva);
-
     }
 
 
@@ -61,6 +59,7 @@ public class ReservaController {
         Reserva reserva = reservaService.findReservaById(id);
        return reserva;
     }
+
     @GetMapping("/usuario/encontrar/{id}")
     public ResponseEntity<?> getReservaByUsuarioId(@PathVariable("id") Long id) {
         Usuario usuario = usuarioService.findUsuarioById(id);

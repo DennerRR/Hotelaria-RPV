@@ -2,9 +2,7 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.QuartoDTO;
 
-import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.interfaces.IQuartoService;
-import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Quarto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/quartos")
 public class QuartoController {
     private IQuartoService quartoService;
-    private IHotelService hotelService;
+
 
     @Autowired
     public QuartoController(IQuartoService service) {

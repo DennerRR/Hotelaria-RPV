@@ -12,7 +12,7 @@ import com.rp4.servicos.model.Servico;
 import com.rp4.servicos.model.Usuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -47,7 +47,6 @@ public class ReservaController {
         reserva.setHotel(hotel);
         reserva.setUsuario(usuario);
         reserva.setServico(servico);
-
         reserva.setId(reservaDTO.getId());
         reserva.setValorReserva(reservaDTO.getValorReserva());
         reservaService.saveReserva(reserva);

@@ -1,7 +1,7 @@
 package com.rp4.servicos.model;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 public class Hotel {

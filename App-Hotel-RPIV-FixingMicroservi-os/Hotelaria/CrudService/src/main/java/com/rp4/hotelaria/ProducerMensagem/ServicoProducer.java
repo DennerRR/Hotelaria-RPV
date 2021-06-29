@@ -1,7 +1,7 @@
 package com.rp4.hotelaria.ProducerMensagem;
 
 import com.rp4.hotelaria.model.Servico;
-import com.rp4.hotelaria.model.Usuario;
+
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,7 @@ public class ServicoProducer {
     @Value("${crud.rabbitmq.routingkeyServico}")
     String routingkey;
 
-    public RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
 
     @Autowired
