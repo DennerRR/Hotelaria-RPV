@@ -15,7 +15,7 @@ public class ServicoProducer {
     @Value("${crud.rabbitmq.routingkeyServico}")
     String routingkey;
 
-    public RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
 
     @Autowired

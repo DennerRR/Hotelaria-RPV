@@ -14,7 +14,7 @@ public class UsuarioProducer {
     @Value("${crud.rabbitmq.routingkeyUsuario}")
     String routingkey;
 
-    public RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
 
     @Autowired

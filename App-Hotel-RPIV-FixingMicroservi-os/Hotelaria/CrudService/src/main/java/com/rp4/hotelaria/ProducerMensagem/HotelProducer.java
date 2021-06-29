@@ -16,7 +16,7 @@ public class HotelProducer {
     @Value("${crud.rabbitmq.routingkeyHotel}")
     String routingkey;
 
-    public RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
 
     @Autowired
