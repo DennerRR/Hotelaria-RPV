@@ -1,7 +1,7 @@
 package com.rp4.consumoservice.dto;
 
 
-import com.rp4.consumoservice.model.Produto;
+
 
 import java.util.Date;
 

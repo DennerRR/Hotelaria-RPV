@@ -2,7 +2,6 @@ package com.rp4.servicos.ServiceImplements;
 
 import com.rp4.servicos.interfaces.IReservaService;
 import com.rp4.servicos.model.Reserva;
-import com.rp4.servicos.model.Servico;
 import com.rp4.servicos.model.Usuario;
 import com.rp4.servicos.repository.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

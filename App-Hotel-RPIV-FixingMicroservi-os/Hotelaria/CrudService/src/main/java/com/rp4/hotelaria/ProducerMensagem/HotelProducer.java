@@ -1,7 +1,7 @@
 package com.rp4.hotelaria.ProducerMensagem;
 
 import com.rp4.hotelaria.model.Hotel;
-import com.rp4.hotelaria.model.Quarto;
+
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

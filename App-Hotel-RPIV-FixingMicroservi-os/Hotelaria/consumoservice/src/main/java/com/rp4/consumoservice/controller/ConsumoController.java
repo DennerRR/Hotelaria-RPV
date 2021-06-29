@@ -36,7 +36,6 @@ public class ConsumoController {
         Consumo consumo = new Consumo();
         Produto produto = produtoService.findProdutoById(consumoDTO.getIdProduto());
         Usuario usuario = usuarioService.findUsuarioById(consumoDTO.getIdUsuario());
-
         consumo.setId(consumoDTO.getId());
         consumo.setData(consumoDTO.getData());
         consumo.setUsuario(usuario);

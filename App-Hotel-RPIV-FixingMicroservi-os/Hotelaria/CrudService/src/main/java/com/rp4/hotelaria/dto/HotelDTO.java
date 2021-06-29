@@ -2,7 +2,7 @@ package com.rp4.hotelaria.dto;
 
 
 
-import java.util.List;
+
 
 public class HotelDTO {
 
