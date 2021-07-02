@@ -2,6 +2,7 @@ package com.rp4.hotelaria.interfaces;
 
 import java.util.List;
 
+import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Hotel;
 
 public interface IHotelService {
@@ -16,5 +17,5 @@ public interface IHotelService {
 
     public List<Hotel> pegarTodosHoteis();
 
-
+    public List<Hotel> findAllHotelByCidade(Cidade cidade);
 }

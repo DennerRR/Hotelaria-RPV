@@ -28,7 +28,7 @@ public class HotelController {
     @ApiOperation(value = "Salvar hotel")
     public void saveHotel(@RequestBody HotelDTO hotelDTO) {
         Hotel hotel = new Hotel();
-        hotel.setCidade(hotelDTO.getCidade());
+        //hotel.setCidade(hotelDTO.getCidade());
         hotel.setDescricao(hotelDTO.getDescricao());
         hotel.setEndereco(hotelDTO.getEndereco());
         hotelService.salvarHotel(hotel);

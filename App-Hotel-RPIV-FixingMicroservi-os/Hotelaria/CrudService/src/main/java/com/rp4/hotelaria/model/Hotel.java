@@ -18,8 +18,6 @@ public class Hotel {
 	@Column(name = "codEndereco")
 	private String codEndereco;
 
-    @Column(name = "cidade")
-    private String cidade;
 
     @Column(name = "descricao")
     private String descricao;
@@ -27,18 +25,23 @@ public class Hotel {
     @Column(name = "endereco")
     private String endereco;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Cidade cidade;
+
+    public Hotel(Long idHotel, List<Quarto> quartos, String codEndereco, String descricao, String endereco, Cidade cidade) {
+        this.idHotel = idHotel;
+        this.quartos = quartos;
+        this.codEndereco = codEndereco;
+        this.descricao = descricao;
+        this.endereco = endereco;
+        this.cidade = cidade;
+    }
 
     public Hotel() {
 
+
     }
 
-    public Hotel(Long idHotel, String codEndereco, String cidade, String descricao, String endereco) {
-        this.idHotel = idHotel;
-        this.codEndereco = codEndereco;
-        this.cidade = cidade;
-        this.descricao = descricao;
-        this.endereco = endereco;
-    }
 
     public Long getIdHotel() {
         return idHotel;
@@ -56,12 +59,20 @@ public class Hotel {
         this.codEndereco = codEndereco;
     }
 
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
+    }
+
+    public List<Quarto> getQuartos() {
+        return quartos;
+    }
+
+    public void setQuartos(List<Quarto> quartos) {
+        this.quartos = quartos;
     }
 
     public String getDescricao() {
