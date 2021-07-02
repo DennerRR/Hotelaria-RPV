@@ -2,7 +2,9 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.QuartoDTO;
 
+import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.interfaces.IQuartoService;
+import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Quarto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +18,25 @@ import java.util.List;
 @RequestMapping("/api/quartos")
 public class QuartoController {
     private IQuartoService quartoService;
-
+    private IHotelService hotelService;
 
     @Autowired
-    public QuartoController(IQuartoService service) {
-
-        this.quartoService = service;
+    public QuartoController(IQuartoService quartoService, IHotelService hotelService) {
+        this.quartoService = quartoService;
+        this.hotelService = hotelService;
     }
 
     @PostMapping("/salvar")
     public void saveQuarto(@RequestBody QuartoDTO quartoDTO) {
+        Hotel hotel = hotelService.getHotelById(quartoDTO.getIdHotel());
         Quarto quarto = new Quarto();
         quarto.setNumeroDoQuarto(quartoDTO.getNumeroDoQuarto());
         quarto.setDescricao(quartoDTO.getDescricao());
         quarto.setPreco(quartoDTO.getPreco());
         quarto.setAdicionalDoQuarto(quartoDTO.getAdicionalDoQuarto());
+        quarto.setHotel(hotel);
+        quarto.setIdQuarto(quartoDTO.getIdQuarto());
         quartoService.salvarQuarto(quarto);
-
     }
 
     @GetMapping("/quarto/{id}")

@@ -2,6 +2,7 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.UsuarioDTO;
 import com.rp4.hotelaria.interfaces.IUsuarioService;
+import com.rp4.hotelaria.model.Funcionario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,7 @@ public class FuncionarioController {
     @PostMapping("/funcionario/salvar")
     @ApiOperation(value = "Salva um Funcionário")
     public void salvarFuncionario(@RequestBody UsuarioDTO usuarioDTO) {
-        com.rp4.hotelaria.model.Funcionario funcionario = new com.rp4.hotelaria.model.Funcionario();
+        Funcionario funcionario = new Funcionario();
         funcionario.setId(usuarioDTO.getId());
         funcionario.setEmail(usuarioDTO.getEmail());
         funcionario.setNome(usuarioDTO.getNome());

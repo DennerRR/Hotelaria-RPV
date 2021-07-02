@@ -8,21 +8,22 @@ public class HotelDTO {
 
     private Long idHotel;
     private String codEndereco;
-    private String cidade;
     private String descricao;
     private String endereco;
-
+    private long idCidade;
 
     public HotelDTO() {
 
     }
 
-    public HotelDTO(Long idHotel, String codEndereco, String cidade, String descricao, String endereco) {
+    public HotelDTO(Long idHotel, String codEndereco, String descricao, String endereco, long idCidade) {
         this.idHotel = idHotel;
         this.codEndereco = codEndereco;
-        this.cidade = cidade;
         this.descricao = descricao;
         this.endereco = endereco;
+        this.idCidade = idCidade;
+
+
     }
 
     public Long getIdHotel() {
@@ -41,14 +42,6 @@ public class HotelDTO {
         this.codEndereco = codEndereco;
     }
 
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -63,5 +56,13 @@ public class HotelDTO {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public long getIdCidade() {
+        return idCidade;
+    }
+
+    public void setIdCidade(long idCidade) {
+        this.idCidade = idCidade;
     }
 }

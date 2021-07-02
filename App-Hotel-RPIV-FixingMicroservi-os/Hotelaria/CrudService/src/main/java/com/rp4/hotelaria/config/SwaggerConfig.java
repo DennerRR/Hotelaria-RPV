@@ -30,8 +30,8 @@ public class SwaggerConfig {
 
     private ApiInfo metaInfo() {
         ApiInfo apiInfo = new ApiInfo(
-                "Usuário API Rest",
-                "API REST de CRUD de Usuários. ",
+                "Cruds API Rest",
+                "API REST de CRUDs de Cidades, Clientes, Funcionarios, Hoteis, Quartos, Serviços e Produtos. ",
                 "1.0",
                 "Terms of service",
                 new Contact("Denner Ramiro Ribeiro",

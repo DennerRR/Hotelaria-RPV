@@ -13,8 +13,7 @@ public class Quarto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idQuarto;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Hotel hotel;
 
     @Column(name = "numeroDoQuarto")

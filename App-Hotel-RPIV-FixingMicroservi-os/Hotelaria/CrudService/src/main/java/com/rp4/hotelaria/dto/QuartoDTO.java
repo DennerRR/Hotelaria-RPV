@@ -7,18 +7,19 @@ public class QuartoDTO {
     private double preco;
     private String descricao;
     private String adicionalDoQuarto;
+    private Long idHotel;
 
     public QuartoDTO() {
 
     }
 
-    public QuartoDTO(Long idQuarto, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto) {
+    public QuartoDTO(Long idQuarto, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto, Long idHotel) {
         this.idQuarto = idQuarto;
         this.numeroDoQuarto = numeroDoQuarto;
-
         this.preco = preco;
         this.descricao = descricao;
         this.adicionalDoQuarto = adicionalDoQuarto;
+        this.idHotel = idHotel;
     }
 
     public Long getIdQuarto() {
@@ -59,5 +60,13 @@ public class QuartoDTO {
 
     public void setAdicionalDoQuarto(String adicionalDoQuarto) {
         this.adicionalDoQuarto = adicionalDoQuarto;
+    }
+
+    public Long getIdHotel() {
+        return idHotel;
+    }
+
+    public void setIdHotel(Long idHotel) {
+        this.idHotel = idHotel;
     }
 }
