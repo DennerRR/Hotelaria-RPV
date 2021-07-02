@@ -18,4 +18,6 @@ public interface IHotelService {
     public List<Hotel> pegarTodosHoteis();
 
     public List<Hotel> findAllHotelByCidade(Cidade cidade);
+
+
 }

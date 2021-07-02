@@ -35,6 +35,7 @@ crud:
     routingkeyProduto: crud.produto.routingkey
     routingkeyServico: crud.servico.routingkey
     routingkeyCidade: crud.cidade.routingkey
+    routingkeyTurismo: crud.turismo.routingkey
 
 eureka:
   instance:
