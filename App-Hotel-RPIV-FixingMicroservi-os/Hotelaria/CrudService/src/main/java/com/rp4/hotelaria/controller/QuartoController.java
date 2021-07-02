@@ -62,5 +62,11 @@ public class QuartoController {
         List<Quarto> quartos = quartoService.pegarTodosQuartos();
         return quartos;
     }
+    @GetMapping("/quarto/Hotel/{id}")
+    public List<Quarto> findQuartoByHotel(@PathVariable("id")Long id){
+        Hotel hotel = hotelService.getHotelById(id);
+        List<Quarto> quartos = quartoService.findQuartoByHotel(hotel);
+        return quartos;
+    }
 
 }
