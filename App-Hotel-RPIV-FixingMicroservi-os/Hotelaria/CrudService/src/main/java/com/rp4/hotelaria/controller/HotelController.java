@@ -1,8 +1,10 @@
 package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.HotelDTO;
+import com.rp4.hotelaria.interfaces.ICidadeService;
 import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.interfaces.IQuartoService;
+import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Quarto;
 import io.swagger.annotations.ApiOperation;
@@ -17,28 +19,27 @@ import java.util.List;
 
 public class HotelController {
     private IHotelService hotelService;
-    private IQuartoService quartoService;
+    private ICidadeService cidadeService;
 
-    public HotelController(IHotelService service,IQuartoService quartoService) {
-        this.hotelService = service;
-        this.quartoService = quartoService;
+
+    public HotelController(IHotelService hotelService, ICidadeService cidadeService) {
+        this.hotelService = hotelService;
+        this.cidadeService = cidadeService;
     }
 
     @PostMapping("/salvar")
     @ApiOperation(value = "Salvar hotel")
     public void saveHotel(@RequestBody HotelDTO hotelDTO) {
+        Cidade cidade = cidadeService.findCidadeById(hotelDTO.getIdCidade());
         Hotel hotel = new Hotel();
-        hotel.setCidade(hotelDTO.getCidade());
+        hotel.setCidade(cidade);
         hotel.setDescricao(hotelDTO.getDescricao());
         hotel.setEndereco(hotelDTO.getEndereco());
+        hotel.setIdHotel(hotelDTO.getIdHotel());
+        hotel.setCodEndereco(hotelDTO.getCodEndereco());
         hotelService.salvarHotel(hotel);
     }
-    @PostMapping("/QuartoHotel/{id}")
-    public void quartoHotel(@PathVariable("id") Long id, Quarto quarto){
-        Hotel hotel = hotelService.getHotelById(id);
-        quarto.setHotel(hotel);
-        quartoService.salvarQuarto(quarto);
-    }
+
 
     @GetMapping("/hotel/{id}")
     @ApiOperation(value = "Retornar hotel")
@@ -63,6 +64,13 @@ public class HotelController {
     @ApiOperation(value = "Retornar uma lista de hotéis")
     public List<Hotel> pegarTodosHoteis() {
         List<Hotel> hoteis = hotelService.pegarTodosHoteis();
+        return hoteis;
+    }
+    @GetMapping("/cidade/hoteis/{id}")
+    @ApiOperation(value = "Pegar hoteis por cidade")
+    public List<Hotel> findAllHotelByCidade(@PathVariable("id")Long id){
+        Cidade cidade = cidadeService.findCidadeById(id);
+        List<Hotel> hoteis = hotelService.findAllHotelByCidade(cidade);
         return hoteis;
     }
 

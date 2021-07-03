@@ -2,6 +2,7 @@ package com.rp4.hotelaria.ServiceImplements;
 
 import com.rp4.hotelaria.ProducerMensagem.HotelProducer;
 import com.rp4.hotelaria.interfaces.IHotelService;
+import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,11 @@ public class HotelServiceImplements implements IHotelService {
     @Override
     public List<Hotel> pegarTodosHoteis() {
         return hotelRepository.findAll();
+    }
+
+    @Override
+    public List<Hotel> findAllHotelByCidade(Cidade cidade) {
+        return hotelRepository.findAllByCidade(cidade);
     }
 
 
