@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
@@ -22,20 +21,22 @@ public class QuartoController {
     private IHotelService hotelService;
 
     @Autowired
-    public QuartoController(IQuartoService service) {
-
-        this.quartoService = service;
+    public QuartoController(IQuartoService quartoService, IHotelService hotelService) {
+        this.quartoService = quartoService;
+        this.hotelService = hotelService;
     }
 
     @PostMapping("/salvar")
     public void saveQuarto(@RequestBody QuartoDTO quartoDTO) {
+        Hotel hotel = hotelService.getHotelById(quartoDTO.getIdHotel());
         Quarto quarto = new Quarto();
         quarto.setNumeroDoQuarto(quartoDTO.getNumeroDoQuarto());
         quarto.setDescricao(quartoDTO.getDescricao());
         quarto.setPreco(quartoDTO.getPreco());
         quarto.setAdicionalDoQuarto(quartoDTO.getAdicionalDoQuarto());
+        quarto.setHotel(hotel);
+        quarto.setIdQuarto(quartoDTO.getIdQuarto());
         quartoService.salvarQuarto(quarto);
-
     }
 
     @GetMapping("/quarto/{id}")
@@ -59,6 +60,12 @@ public class QuartoController {
     @GetMapping("/todos")
     public List<Quarto> pegarTodosQuartos() {
         List<Quarto> quartos = quartoService.pegarTodosQuartos();
+        return quartos;
+    }
+    @GetMapping("/quarto/Hotel/{id}")
+    public List<Quarto> findQuartoByHotel(@PathVariable("id")Long id){
+        Hotel hotel = hotelService.getHotelById(id);
+        List<Quarto> quartos = quartoService.findQuartoByHotel(hotel);
         return quartos;
     }
 

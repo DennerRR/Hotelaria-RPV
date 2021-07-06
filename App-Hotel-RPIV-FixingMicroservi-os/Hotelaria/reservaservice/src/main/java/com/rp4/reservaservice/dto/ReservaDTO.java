@@ -1,6 +1,5 @@
 package com.rp4.reservaservice.dto;
 
-import com.rp4.reservaservice.model.Quarto;
 
 import java.util.Date;
 

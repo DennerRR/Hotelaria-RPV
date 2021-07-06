@@ -2,6 +2,7 @@ package com.rp4.hotelaria.ServiceImplements;
 
 import com.rp4.hotelaria.ProducerMensagem.QuartoProducer;
 import com.rp4.hotelaria.interfaces.IQuartoService;
+import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Quarto;
 import com.rp4.hotelaria.repository.QuartoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,10 @@ public class QuartoServiceImplements implements IQuartoService {
     @Override
     public List<Quarto> pegarTodosQuartos() {
         return quartoRepository.findAll();
+    }
+
+    @Override
+    public List<Quarto> findQuartoByHotel(Hotel hotel) {
+        return quartoRepository.findQuartoByHotel(hotel);
     }
 }

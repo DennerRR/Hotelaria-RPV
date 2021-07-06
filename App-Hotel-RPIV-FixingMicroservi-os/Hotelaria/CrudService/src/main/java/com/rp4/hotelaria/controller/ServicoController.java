@@ -24,7 +24,7 @@ public class ServicoController {
     public void salvarServico(@RequestBody ServicoDTO servicoDTO){
         Servico servico= new Servico();
         servico.setId(servicoDTO.getId());
-        servico.setServico(servicoDTO.getServico());
+        servico.setNomeServico(servicoDTO.getServico());
         servico.setValor(servicoDTO.getValor());
         servicoService.salvarServico(servico);
 
@@ -33,6 +33,7 @@ public class ServicoController {
     public Servico pegarServicoPeloID(@PathVariable("id")Long id){
         return servicoService.getServicoById(id);
     }
+
     @PutMapping("/serviços/atualizar")
     public Servico atualizarServico(@RequestBody Servico servico){
         Servico serv = servicoService.atualizarServico(servico);

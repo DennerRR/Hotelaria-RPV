@@ -1,7 +1,7 @@
 package com.rp4.servicos.interfaces;
 
 import com.rp4.servicos.model.Reserva;
-import com.rp4.servicos.model.Servico;
+
 import com.rp4.servicos.model.Usuario;
 
 import java.util.List;

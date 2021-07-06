@@ -29,6 +29,12 @@ public class ConsumoController {
         this.usuarioService = usuarioService;
         this.produtoService = produtoService;
     }
+    public void consumoSets(Consumo consumo, ConsumoDTO consumoDTO){
+
+        consumo.setId(consumoDTO.getId());
+        consumo.setData(consumoDTO.getData());
+        consumoService.saveConsumo(consumo);
+    }
 
     @PostMapping("/salvar")
     @ApiOperation(value = "Cadastra um consumo")
@@ -36,20 +42,19 @@ public class ConsumoController {
         Consumo consumo = new Consumo();
         Produto produto = produtoService.findProdutoById(consumoDTO.getIdProduto());
         Usuario usuario = usuarioService.findUsuarioById(consumoDTO.getIdUsuario());
-
-        consumo.setId(consumoDTO.getId());
-        consumo.setData(consumoDTO.getData());
         consumo.setUsuario(usuario);
         consumo.setProduto(produto);
         consumo.setValorConsumo(produto.getValor());
-        consumoService.saveConsumo(consumo);
+        consumoSets(consumo, consumoDTO);
     }
-//    @PutMapping("/consumo/atualizar")
-//    @ApiOperation(value = "Atualizar uma consumo")
-//    public ResponseEntity<?> updateConsumo(@RequestBody Consumo consumo) {
-//        Consumo atualizarConsumo = consumoService.updateConsumo(consumo);
-//        return new ResponseEntity<>(atualizarConsumo, HttpStatus.OK);
-//    }
+
+    @PutMapping("/consumo/atualizar")
+    @ApiOperation(value = "Atualizar uma consumo")
+    public ResponseEntity<?> updateConsumo(@RequestBody Consumo consumo) {
+        Consumo atualizarConsumo = consumoService.updateConsumo(consumo);
+        return new ResponseEntity<>(atualizarConsumo, HttpStatus.OK);
+    }
+
     @GetMapping("/consumo/{id}")
     public ResponseEntity<?> getConsumoById(@PathVariable("id") Long id) {
         Consumo consumo = consumoService.findConsumoById(id);

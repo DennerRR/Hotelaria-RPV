@@ -11,7 +11,7 @@ public class Servico {
     private Long id;
 
     @Column
-    private String servico;
+    private String nomeServico;
 
     @Column
     private double valor;
@@ -19,9 +19,9 @@ public class Servico {
     public Servico() {
     }
 
-    public Servico(Long id, String servico, double valor) {
+    public Servico(Long id, String nomeServico, double valor) {
         this.id = id;
-        this.servico = servico;
+        this.nomeServico = nomeServico;
         this.valor = valor;
     }
 
@@ -33,12 +33,12 @@ public class Servico {
         this.id = id;
     }
 
-    public String getServico() {
-        return servico;
+    public String getNomeServico() {
+        return nomeServico;
     }
 
-    public void setServico(String servico) {
-        this.servico = servico;
+    public void setNomeServico(String nomeServico) {
+        this.nomeServico = nomeServico;
     }
 
     public double getValor() {

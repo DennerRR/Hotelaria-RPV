@@ -1,6 +1,5 @@
 package com.rp4.reservaservice.dto;
 
-import javax.persistence.Column;
 
 public class QuartoDTO {
     private  Long idQuarto;
