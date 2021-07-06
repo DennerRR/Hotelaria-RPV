@@ -48,12 +48,13 @@ public class ConsumoController {
         consumoSets(consumo, consumoDTO);
     }
 
-//    @PutMapping("/consumo/atualizar")
-//    @ApiOperation(value = "Atualizar uma consumo")
-//    public ResponseEntity<?> updateConsumo(@RequestBody Consumo consumo) {
-//        Consumo atualizarConsumo = consumoService.updateConsumo(consumo);
-//        return new ResponseEntity<>(atualizarConsumo, HttpStatus.OK);
-//    }
+    @PutMapping("/consumo/atualizar")
+    @ApiOperation(value = "Atualizar uma consumo")
+    public ResponseEntity<?> updateConsumo(@RequestBody Consumo consumo) {
+        Consumo atualizarConsumo = consumoService.updateConsumo(consumo);
+        return new ResponseEntity<>(atualizarConsumo, HttpStatus.OK);
+    }
+
     @GetMapping("/consumo/{id}")
     public ResponseEntity<?> getConsumoById(@PathVariable("id") Long id) {
         Consumo consumo = consumoService.findConsumoById(id);
