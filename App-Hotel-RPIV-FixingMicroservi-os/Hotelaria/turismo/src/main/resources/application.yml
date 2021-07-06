@@ -29,9 +29,9 @@ spring:
 crud:
   rabbitmq:
     exchange: crud.exchange
-    queueQuarto: crud.reserva.quarto
-    queueUsuario: crud.reserva.usuario
-    queueHotel: crud.reserva.hotel
+    queueTurismo: crud.turismo.turismo
+    queueUsuario: crud.turismo.usuario
+
 
 eureka:
   instance:
