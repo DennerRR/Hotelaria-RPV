@@ -39,6 +39,7 @@ public class TurismoController {
         turismo.setDescricao(turismoDTO.getDescricao());
         turismo.setData(turismoDTO.getData());
         turismo.setHotel(hotel);
+        turismo.setPreco(turismoDTO.getPreco());
         turismoService.salvarTurismo(turismo);
     }
 

@@ -8,16 +8,18 @@ public class TurismoDTO {
     private String descricao;
     private Long idHotel;
     private Date data;
+    private double preco;
 
     public TurismoDTO() {
     }
 
-    public TurismoDTO(Long id, String nomeTurismo, String descricao, Long idHotel, Date data) {
+    public TurismoDTO(Long id, String nomeTurismo, String descricao, Long idHotel, Date data, double preco) {
         this.id = id;
         this.nomeTurismo = nomeTurismo;
         this.descricao = descricao;
         this.idHotel = idHotel;
         this.data = data;
+        this.preco = preco;
     }
 
     public Long getId() {
@@ -58,5 +60,13 @@ public class TurismoDTO {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
