@@ -26,17 +26,19 @@ public class Turismo {
     @Column(name = "data")
     private Date data;
 
-
+    @Column(name = "preco")
+    private double preco;
 
     public Turismo() {
     }
 
-    public Turismo(Long id, String nomeTurismo, String descricao, Hotel hotel, Date data) {
+    public Turismo(Long id, String nomeTurismo, String descricao, Hotel hotel, Date data, double preco) {
         this.id = id;
         this.nomeTurismo = nomeTurismo;
         this.descricao = descricao;
         this.hotel = hotel;
         this.data = data;
+        this.preco = preco;
     }
 
     public Long getId() {
@@ -77,5 +79,13 @@ public class Turismo {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 }
