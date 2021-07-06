@@ -1,11 +1,9 @@
 package com.rp4.hotelaria.controller;
 
 
-import com.rp4.hotelaria.dto.HotelDTO;
 import com.rp4.hotelaria.dto.TurismoDTO;
 import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.interfaces.ITurismoService;
-import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Turismo;
 import io.swagger.annotations.Api;

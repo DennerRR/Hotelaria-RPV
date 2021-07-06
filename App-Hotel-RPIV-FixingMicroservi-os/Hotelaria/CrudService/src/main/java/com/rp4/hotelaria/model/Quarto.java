@@ -1,7 +1,5 @@
 package com.rp4.hotelaria.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 @Entity

@@ -4,7 +4,6 @@ package com.rp4.hotelaria.controller;
 import com.rp4.hotelaria.dto.CidadeDTO;
 import com.rp4.hotelaria.interfaces.ICidadeService;
 import com.rp4.hotelaria.model.Cidade;
-import com.rp4.hotelaria.model.Hotel;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;

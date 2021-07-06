@@ -1,14 +1,9 @@
 package com.rp4.hotelaria.controller;
 
-import com.rp4.hotelaria.dto.UsuarioDTO;
 import com.rp4.hotelaria.interfaces.IUsuarioService;
-import com.rp4.hotelaria.model.Cliente;
-import com.rp4.hotelaria.model.Funcionario;
 import com.rp4.hotelaria.model.Usuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
