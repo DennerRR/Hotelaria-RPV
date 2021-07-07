@@ -8,16 +8,26 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+@Controller
+public class ProdutoController {
 
-    @RestController
-    @RequestMapping("/api/estoque")
+   @Autowired
+   private IProdutoService produtoService;
 
-    public class ProdutoController {
-        private IProdutoService produtoService;
+    @RequestMapping(value = "/produtos", method = RequestMethod.GET)
+        public ModelAndView getProdutos(){
+            ModelAndView mv = new ModelAndView("produtos");
+            List<Produto> produtos = produtoService.pegarTodosProdutos();
+            mv.addObject("produtos", produtos);
+            return mv;
+        }
+
 
         @Autowired
         public ProdutoController(IProdutoService produto) { this.produtoService = produto;
@@ -53,12 +63,12 @@ import java.util.List;
             produtoService.excluirProduto(id);
         }
 
-        @GetMapping("/todos")
+        /*@GetMapping("/todos")
         @ApiOperation(value = "Retornar uma lista de produtos")
         public List<Produto> pegarTodosProdutos() {
             List<Produto> produtos = produtoService.pegarTodosProdutos();
             return produtos;
-        }
+        }*/
 
     }
 
