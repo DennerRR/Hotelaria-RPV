@@ -13,35 +13,36 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-
 @Controller
+/*@RestController
+@RequestMapping("/api/estoque")*/
+
 public class ProdutoController {
 
    @Autowired
    private IProdutoService produtoService;
 
-    @RequestMapping(value = "/produtos", method = RequestMethod.GET)
-        public ModelAndView getProdutos(){
-            ModelAndView mv = new ModelAndView("produtos");
-            List<Produto> produtos = produtoService.pegarTodosProdutos();
-            mv.addObject("produtos", produtos);
-            return mv;
-        }
+   @RequestMapping(value = "/salvarProduto", method = RequestMethod.GET)
+    public String form(){
+       return "/produtos/formProduto";
+    }
 
+    @RequestMapping(value = "/salvarProduto", method = RequestMethod.POST)
+    public String form(Produto produto){
+       produtoService.salvarProduto(produto);
+        return "redirect:/salvarProduto";
+    }
+
+    @RequestMapping(value = "/verProdutos")
+    public ModelAndView listaProdutos(){
+        ModelAndView mv = new ModelAndView("index");
+        Iterable<Produto> produtos = produtoService.pegarTodosProdutos();
+        mv.addObject("produto",produtos);
+        return mv;
+    }
 
         @Autowired
         public ProdutoController(IProdutoService produto) { this.produtoService = produto;
-        }
-
-        @PostMapping("/salvar")
-        @ApiOperation(value = "Salvar produto")
-        public void saveEstoque(@RequestBody ProdutoDTO produtoDTO) {
-            Produto produto = new Produto();
-            produto.setId(produtoDTO.getId());
-            produto.setNome(produtoDTO.getNome());
-            produto.setQuantidade(produtoDTO.getQuantidade());
-            produto.setValor(produtoDTO.getValor());
-            produtoService.salvarProduto(produto);
         }
 
         @GetMapping("/produto/{id}")
