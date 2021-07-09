@@ -32,6 +32,8 @@
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Valor</th>
+                <th>Deletar</th>
+
             </tr>
         </thead>
         <tbody>
@@ -39,6 +41,8 @@
                 <td><span th:text="${produto.nome}"></span></td>
                 <td><span th:text="${produto.quantidade}"></span></td>
                 <td><span th:text="${produto.valor}"></span></td>
+                <td><a class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i></a></td>
+            <!--th:href="${(#mvc.url('EC#deleteProduto').arg(0, produto.id)).build()}"-->
             </tr>
         </tbody>
     </table>

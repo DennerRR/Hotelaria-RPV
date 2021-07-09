@@ -1,18 +1,12 @@
 package com.rp4.hotelaria.controller;
 
-import com.rp4.hotelaria.dto.ProdutoDTO;
-
 import com.rp4.hotelaria.interfaces.IProdutoService;
 import com.rp4.hotelaria.model.Produto;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 @Controller
 /*@RestController
 @RequestMapping("/api/estoque")*/
@@ -30,12 +24,12 @@ public class ProdutoController {
     @RequestMapping(value = "/salvarProduto", method = RequestMethod.POST)
     public String form(Produto produto){
        produtoService.salvarProduto(produto);
-        return "redirect:/salvarProduto";
+        return "redirect:/verProdutos";
     }
 
     @RequestMapping(value = "/verProdutos")
     public ModelAndView listaProdutos(){
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("produtos/produto");
         Iterable<Produto> produtos = produtoService.pegarTodosProdutos();
         mv.addObject("produto",produtos);
         return mv;
@@ -45,14 +39,21 @@ public class ProdutoController {
         public ProdutoController(IProdutoService produto) { this.produtoService = produto;
         }
 
-        @GetMapping("/produto/{id}")
+        /*@GetMapping("/produto/{id}")
         @ApiOperation(value = "Retornar produto")
         public ResponseEntity<?> pegarProdutoPeloId(@PathVariable("id") Long id) {
             Produto produto = produtoService.getProdutoById(id);
             return new ResponseEntity<>(produto, HttpStatus.OK);
-        }
+        }*/
 
-        @PutMapping("/produto/atualizar")
+        @RequestMapping("/deletarProdutos")
+        public String deleteProduto(@PathVariable("id") long id){
+            Produto produto = produtoService.getProdutoById(id);
+            produtoService.excluirProduto(id);
+            return "redirect:/verProdutos";
+
+        }
+        /*@PutMapping("/produto/atualizar")
         @ApiOperation(value = "Atualizar Produto")
         public Produto atualizarProduto(@RequestBody Produto produto) {
             return produtoService.atualizarProduto(produto);
@@ -63,7 +64,7 @@ public class ProdutoController {
         public void deleteProduto(@PathVariable("id") Long id) {
             produtoService.excluirProduto(id);
         }
-
+*/
         /*@GetMapping("/todos")
         @ApiOperation(value = "Retornar uma lista de produtos")
         public List<Produto> pegarTodosProdutos() {
