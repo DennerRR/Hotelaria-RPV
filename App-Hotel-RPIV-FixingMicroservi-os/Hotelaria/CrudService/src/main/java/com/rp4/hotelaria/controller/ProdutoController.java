@@ -1,6 +1,7 @@
 package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.interfaces.IProdutoService;
+import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class ProdutoController {
 
    @RequestMapping(value = "/salvarProduto", method = RequestMethod.GET)
     public String form(){
-       return "/produtos/formProduto";
+       return "produto/formProduto";
     }
 
     @RequestMapping(value = "/salvarProduto", method = RequestMethod.POST)
@@ -29,12 +30,18 @@ public class ProdutoController {
 
     @RequestMapping(value = "/verProdutos")
     public ModelAndView listaProdutos(){
-        ModelAndView mv = new ModelAndView("produtos/produto");
+        ModelAndView mv = new ModelAndView("produto/produto");
         Iterable<Produto> produtos = produtoService.pegarTodosProdutos();
         mv.addObject("produto",produtos);
         return mv;
     }
 
+    @RequestMapping("/deletarProduto")
+    public String deletarProduto(long id){
+        Produto produto = produtoService.getProdutoById(id);
+        produtoService.excluirProduto(id);
+        return "redirect:/verProdutos";
+    }
         @Autowired
         public ProdutoController(IProdutoService produto) { this.produtoService = produto;
         }
@@ -46,7 +53,8 @@ public class ProdutoController {
             return new ResponseEntity<>(produto, HttpStatus.OK);
         }*/
 
-        @RequestMapping("/deletarProdutos")
+
+       /* @RequestMapping("/deletarProdutos")
         public String deleteProduto(@PathVariable("id") long id){
             Produto produto = produtoService.getProdutoById(id);
             produtoService.excluirProduto(id);

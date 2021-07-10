@@ -14,9 +14,9 @@
 <body>
 <header>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" style="background: #292929;">
             <a href="#" class="brand-logo center">Lista de Produtos</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" class="right hide-on-med-and-down" style="background: #292929;">
                 <!--<li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li>
                 <li><a href="collapsible.html">JavaScript</a></li>-->
@@ -32,6 +32,7 @@
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Valor</th>
+                <th>Editar</th>
                 <th>Deletar</th>
 
             </tr>
@@ -41,8 +42,9 @@
                 <td><span th:text="${produto.nome}"></span></td>
                 <td><span th:text="${produto.quantidade}"></span></td>
                 <td><span th:text="${produto.valor}"></span></td>
-                <td><a class="waves-effect waves-light btn-small"><i class="material-icons right">delete</i></a></td>
-            <!--th:href="${(#mvc.url('EC#deleteProduto').arg(0, produto.id)).build()}"-->
+                <td><a class="waves-effect waves-light btn-small"> <!--th:href="${(#mvc.url('CC#alterarCidade').arg(0, cidade.id)).build()}">--><i class="material-icons center">update</i></a></td>
+                <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('PC#deletarProduto').arg(0, produto.id)).build()}"><i class="material-icons center">delete</i></a></td>
+
             </tr>
         </tbody>
     </table>

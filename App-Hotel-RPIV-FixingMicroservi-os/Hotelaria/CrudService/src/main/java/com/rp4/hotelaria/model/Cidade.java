@@ -2,6 +2,7 @@ package com.rp4.hotelaria.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
@@ -9,13 +10,15 @@ import java.util.List;
 public class Cidade {
 
     @Id
-    @Column(name = "id_Cidade")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome_Cidade",nullable = false)
+    @NotEmpty
+    @Column(name = "nome")
     private String nome;
 
+    @NotEmpty
     @Column(name = "ddd")
     private String ddd;
 
