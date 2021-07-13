@@ -12,21 +12,35 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/serviços")
+@RequestMapping("/api/servicos")
 public class ServicoController {
     @Autowired
     private IServicoService servicoService;
 
-    @RequestMapping(value = "/s", method = RequestMethod.GET)
+
+    public ServicoController(IServicoService servicoService){
+        this.servicoService = servicoService;
+    }
+
+    @RequestMapping(value = "/listarServicos", method = RequestMethod.GET)
     public ModelAndView getService(){
         ModelAndView mv = new ModelAndView("service");
         List<Servico> service = servicoService.pegarTodosServicos();
         mv.addObject("service", service);
         return mv;
     }
-    public ServicoController(IServicoService servicoService){
-        this.servicoService = servicoService;
+
+    @RequestMapping(value = "/salvarServico", method = RequestMethod.GET)
+    public String form(){
+        return "cadService";
     }
+
+    @RequestMapping(value = "/salvarServico", method = RequestMethod.POST)
+    public String form(Servico servico){
+        servicoService.salvarServico(servico);
+        return "redirect:/api/servicos/salvarServico";
+    }
+
     @GetMapping("/todos")
     public List<Servico> pegarTodosServicos(){
         List<Servico> servicos = servicoService.pegarTodosServicos();

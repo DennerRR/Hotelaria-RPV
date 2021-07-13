@@ -2,16 +2,16 @@ package com.rp4.hotelaria.dto;
 
 public class ServicoDTO {
     private Long id;
-    private String servico;
+    private String nome_servico;
     private double valor;
 
     public ServicoDTO(){
 
     }
 
-    public ServicoDTO(Long id, String servico, double valor) {
+    public ServicoDTO(Long id, String nome_servico, double valor) {
         this.id = id;
-        this.servico = servico;
+        this.nome_servico = nome_servico;
         this.valor = valor;
     }
 
@@ -24,11 +24,11 @@ public class ServicoDTO {
     }
 
     public String getServico() {
-        return servico;
+        return nome_servico;
     }
 
     public void setServico(String servico) {
-        this.servico = servico;
+        this.nome_servico = servico;
     }
 
     public double getValor() {
