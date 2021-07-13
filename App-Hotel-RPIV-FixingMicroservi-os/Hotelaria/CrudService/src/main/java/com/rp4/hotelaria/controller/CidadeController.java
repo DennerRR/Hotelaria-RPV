@@ -90,15 +90,5 @@ public class CidadeController {
         return "redirect:/verCidades";
     }
 
-    @RequestMapping("/deletarHotel")
-    public String excluirHotel(long id) {
-        Hotel hotel = hotelService.getHotelById(id);
-        hotelService.excluirHotel(id);
-        Cidade cidade = hotel.getCidade();
-        long idLong = hotel.getIdHotel();
-        String idd = "" + idLong;
-        return "redirect:/" + idd;
-    }
-
 }
 

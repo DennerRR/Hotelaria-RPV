@@ -57,7 +57,7 @@
             <tr th:each="hotel: ${hoteis}">
                 <td><span th:text="${hotel.descricao}"></span></td>
                 <td><span th:text ="${hotel.endereco}"></span></td>
-                <td><a class="waves-effect waves-light btn-small"><!--th:href="${(#mvc.url('CC#deleteHotel').arg(0, hotel.id)).build()}"--><i class="material-icons center">delete</i></a></td>
+                <td><a class="waves-effect waves-light btn-small" ><!--th:href="${(#mvc.url('HC#deleteHotel').arg(0, hotel.id)).build()}">--><i class="material-icons center">delete</i></a></td>
                 <!-- th:href="${(#mvc.url('CC#excluirHotel').arg(0, hotel.id)).build()}"-->
             </tr>
         </tbody>

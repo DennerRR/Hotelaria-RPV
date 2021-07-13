@@ -52,11 +52,22 @@ public class HotelController {
         return hotelService.atualizarHotel(hotel);
     }
 
-    @DeleteMapping("/hotel/excluir/{id}")
+    /*@DeleteMapping("/hotel/excluir/{id}")
     @ApiOperation(value = "Deletar hotel")
     public void deleteHotel(@PathVariable("id") Long id) {
         hotelService.excluirHotel(id);
+    }*/
+
+    @RequestMapping("/deletarHotel")
+    public String excluirHotel(long id) {
+        Hotel hotel = hotelService.getHotelById(id);
+        hotelService.excluirHotel(id);
+        Cidade cidade = hotel.getCidade();
+        long idLong = hotel.getIdHotel();
+        String idd = "" + idLong;
+        return "redirect:/" + idd;
     }
+
 
     @GetMapping("/todos")
     @ApiOperation(value = "Retornar uma lista de hotéis")
