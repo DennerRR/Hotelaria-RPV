@@ -2,16 +2,28 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.ServicoDTO;
 import com.rp4.hotelaria.interfaces.IServicoService;
+import com.rp4.hotelaria.model.Funcionario;
 import com.rp4.hotelaria.model.Servico;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/serviços")
 public class ServicoController {
+    @Autowired
     private IServicoService servicoService;
 
+    @RequestMapping(value = "/s", method = RequestMethod.GET)
+    public ModelAndView getService(){
+        ModelAndView mv = new ModelAndView("service");
+        List<Servico> service = servicoService.pegarTodosServicos();
+        mv.addObject("service", service);
+        return mv;
+    }
     public ServicoController(IServicoService servicoService){
         this.servicoService = servicoService;
     }
@@ -43,4 +55,6 @@ public class ServicoController {
     public void deletarServico(@PathVariable("id")Long id){
         servicoService.excluirServico(id);
     }
+
+
 }
