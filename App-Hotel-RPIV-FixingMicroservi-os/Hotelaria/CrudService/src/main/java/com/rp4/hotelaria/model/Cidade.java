@@ -3,11 +3,12 @@ package com.rp4.hotelaria.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "tbl_registro_cidade")
-public class Cidade {
+public class Cidade implements Serializable {
 
     @Id
     @Column(name = "id")

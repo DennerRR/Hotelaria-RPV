@@ -42,7 +42,7 @@
     <tr th:each="cidade : ${cidade}">
         <td><a th:href="${(#mvc.url('CC#detalhesCidades').arg(0, cidade.id)).build()}"><span th:text="${cidade.nome}"></span></a></td>
         <td><span th:text="${cidade.ddd}"></span></td>
-        <td><a class="waves-effect waves-light btn-small"> <!--th:href="${(#mvc.url('CC#alterarCidade').arg(0, cidade.id)).build()}">--><i class="material-icons center">update</i></a></td>
+        <td><a class="waves-effect waves-light btn-small" th:href="@{/alterarCidade/{id}(id = ${cidade.id})}"><i class="material-icons center">update</i></a></td>
         <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('CC#deletarCidade').arg(0, cidade.id)).build()}"><i class="material-icons center">delete</i></a></td>
 
     </tr>
