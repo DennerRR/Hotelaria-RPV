@@ -17,7 +17,7 @@ public class ServicoServiceImplements implements IServicoService {
     private ServicoProducer servicoProducer;
 
     @Autowired
-    public ServicoServiceImplements(ServicoRepository servicoRepository, ServicoProducer servicoProducer){
+    public ServicoServiceImplements(ServicoRepository servicoRepository, ServicoProducer servicoProducer) {
         this.servicoRepository = servicoRepository;
         this.servicoProducer = servicoProducer;
     }

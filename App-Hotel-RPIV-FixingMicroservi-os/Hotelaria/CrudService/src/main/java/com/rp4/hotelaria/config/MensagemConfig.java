@@ -15,7 +15,7 @@ public class MensagemConfig {
 
 
     @Bean
-    public Exchange exchange(){
+    public Exchange exchange() {
         return ExchangeBuilder.directExchange(exchange).durable(true).build();
     }
 

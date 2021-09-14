@@ -20,7 +20,7 @@ public class UsuarioServiceImplements implements IUsuarioService {
     private UsuarioProducer usuarioProducer;
 
     @Autowired
-    public UsuarioServiceImplements(UsuarioRepository usuarioR,UsuarioProducer usuarioProducer) {
+    public UsuarioServiceImplements(UsuarioRepository usuarioR, UsuarioProducer usuarioProducer) {
         this.usuarioRepository = usuarioR;
         this.usuarioProducer = usuarioProducer;
 
@@ -29,7 +29,7 @@ public class UsuarioServiceImplements implements IUsuarioService {
     @Override
     @Transactional
     public void salvarUsuario(Usuario usuario) {
-       Usuario usuarioSalvo = usuarioRepository.save(usuario);
+        Usuario usuarioSalvo = usuarioRepository.save(usuario);
         usuarioProducer.producerMensagem(usuarioSalvo);
     }
 

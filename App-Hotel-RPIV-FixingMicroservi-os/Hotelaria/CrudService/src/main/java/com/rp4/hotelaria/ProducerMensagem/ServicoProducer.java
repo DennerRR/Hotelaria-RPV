@@ -19,11 +19,11 @@ public class ServicoProducer {
 
 
     @Autowired
-    public ServicoProducer(RabbitTemplate rabbitTemplate){
+    public ServicoProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Servico servico){
+    public void producerMensagem(Servico servico) {
         rabbitTemplate.convertAndSend(exchange, routingkey, servico);
 
     }

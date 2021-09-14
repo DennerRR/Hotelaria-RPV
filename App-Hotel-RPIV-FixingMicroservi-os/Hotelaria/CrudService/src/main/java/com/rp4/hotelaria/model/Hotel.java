@@ -12,11 +12,11 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHotel;
 
-	@OneToMany
-	private List<Quarto> quartos;
+    @OneToMany
+    private List<Quarto> quartos;
 
-	@Column(name = "codEndereco")
-	private String codEndereco;
+    @Column(name = "codEndereco")
+    private String codEndereco;
 
 
     @Column(name = "descricao")

@@ -20,7 +20,7 @@ public class QuartoServiceImplements implements IQuartoService {
     @Autowired
     public QuartoServiceImplements(QuartoRepository quartoR, QuartoProducer quartoPM) {
         this.quartoRepository = quartoR;
-        this.quartoProducer= quartoPM;
+        this.quartoProducer = quartoPM;
     }
 
     @Override

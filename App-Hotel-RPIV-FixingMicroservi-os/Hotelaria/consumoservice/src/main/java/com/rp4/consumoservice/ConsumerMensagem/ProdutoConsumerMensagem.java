@@ -12,12 +12,12 @@ public class ProdutoConsumerMensagem {
     private ProdutoRepository produtoRepository;
 
     @Autowired
-    public ProdutoConsumerMensagem(ProdutoRepository produtoRepository){
+    public ProdutoConsumerMensagem(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
     }
 
     @RabbitListener(queues = {"${crud.rabbitmq.queueProduto}"})
-    public void consumer(@Payload Produto produto){
+    public void consumer(@Payload Produto produto) {
         produtoRepository.save(produto);
     }
 }

@@ -31,11 +31,10 @@ public class Reserva {
     private Usuario usuario;
 
 
-
     @Column(name = "valorReserva", nullable = false)
     private double valorReserva;
 
-    public Reserva (){
+    public Reserva() {
 
     }
 

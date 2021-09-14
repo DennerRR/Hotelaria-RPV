@@ -32,6 +32,7 @@ public class ReservaController {
         this.turismoService = turismoService;
         this.usuarioService = usuarioService;
     }
+
     @PostMapping("/salvar")
     @ApiOperation(value = "Cadastra uma reserva")
     public void salvarReserva(@RequestBody ReservaDTO reservaDTO) {

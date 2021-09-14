@@ -11,5 +11,6 @@ import java.util.List;
 public interface QuartoRepository extends JpaRepository<Quarto, Long> {
 
     Quarto findQuartoByIdQuarto(Long id);
+
     List<Quarto> findQuartoByHotel(Hotel hotel);
 }

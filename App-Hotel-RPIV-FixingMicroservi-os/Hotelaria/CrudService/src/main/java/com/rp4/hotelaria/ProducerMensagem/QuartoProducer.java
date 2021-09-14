@@ -20,14 +20,14 @@ public class QuartoProducer {
 
 
     @Autowired
-    public QuartoProducer(RabbitTemplate rabbitTemplate){
+    public QuartoProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Quarto quarto){
+    public void producerMensagem(Quarto quarto) {
         rabbitTemplate.convertAndSend(exchange, routingkey, quarto);
 
-}
+    }
 
 
 }

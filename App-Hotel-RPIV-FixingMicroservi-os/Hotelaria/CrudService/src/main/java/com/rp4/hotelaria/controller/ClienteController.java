@@ -36,14 +36,14 @@ public class ClienteController {
         clienteService.salvarUsuario(cliente);
     }
 
-     @GetMapping("cliente/pegar/{id}")
+    @GetMapping("cliente/pegar/{id}")
     @ApiOperation(value = "Retorna um Cliente")
     public Cliente pegarClientePeloID(@PathVariable("id") Long id) {
         Cliente cliente = clienteService.getClienteById(id);
         return cliente;
     }
 
-     @PutMapping("/cliente/atualizar")
+    @PutMapping("/cliente/atualizar")
     @ApiOperation(value = "Atualiza um cliente")
     public Cliente atualizarCliente(@RequestBody Cliente cli) {
         Cliente cliente = clienteService.atualizarCliente(cli);

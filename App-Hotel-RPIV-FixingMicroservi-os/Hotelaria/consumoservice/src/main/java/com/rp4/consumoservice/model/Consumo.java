@@ -70,7 +70,6 @@ public class Consumo {
     }
 
 
-
     public double getValorConsumo() {
         return valorConsumo;
     }

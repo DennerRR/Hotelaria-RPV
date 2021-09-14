@@ -1,9 +1,6 @@
 package com.rp4.hotelaria.dto;
 
 
-
-
-
 public class HotelDTO {
 
     private Long idHotel;

@@ -19,11 +19,11 @@ public class CidadeProducer {
 
 
     @Autowired
-    public CidadeProducer(RabbitTemplate rabbitTemplate){
+    public CidadeProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Cidade cidade){
+    public void producerMensagem(Cidade cidade) {
         rabbitTemplate.convertAndSend(exchange, routingkey, cidade);
 
     }
