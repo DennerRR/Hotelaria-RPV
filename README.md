@@ -8,7 +8,7 @@
 
 > MySQL como banco de dados
 
-> Front-end em Flutter
+> Front-end em HTML, CSS, JavaScript
 
 Projeto de Hotelaria à disciplina de Resolução de Problemas V
 
