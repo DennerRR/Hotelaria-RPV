@@ -1,32 +1,39 @@
+import React, { Component } from 'react';
+import apiServico from './services/api';
 
-async function getContent() {
-    try {
-        const response = await fetch('http://localhost:8081/CrudService/api/serviços/todos')
+class App extends Component {
+  state = {
+    servicos: [],
+  }
+  async componentDidMount() {
+    const response = await apiServico.get('todos');
 
-        const data = await response.json()
-        console.log(data)
-        show(data)
-        
+    this.setState({ servicos: response.data });
+  }
+   render() {
 
-    } catch (error) {
-        console.error(error)
-    }
+  const { servicos } = this.state;
 
-}
-getContent()
-
-function show(servicos) {
-    let cont = 0
-    let output = servicos.map(servico => (`
-    <tr>
-    <td id="">${servico.id}</td>
-    <td>${servico.nomeServico}</td>
-    <td>${servico.valor}</td>
-    <td id="" ><!-- Button trigger modal -->
-    <button value="${++cont}" type="button" class="btn btn-warning" id="botao" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onmouseover="getID(${cont})">
+     return (
+      <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">Identificador de Serviço</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Editar</th>
+          </tr>
+      </thead>
+        <tbody>
+      {servicos.map(servico => (
+        <tr>
+          <td>{servico.id}</td>
+          <td>{servico.nomeServico}</td>
+          <td>{servico.valor}</td>
+          <td><td id="" >
+    <button type="button" class="btn btn-warning" id="botao" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Editar
     </button>
-    <!-- Modal -->
     <div
         class="modal fade"
         id="staticBackdrop"
@@ -45,19 +52,19 @@ function show(servicos) {
                     <div class="mb-3 row">
                         <label for="staticId" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="staticId" >
+                            <input type="text" readonly class="form-control-plaintext" id="staticId" value={servico.id} />
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="nomeservico" class="col-sm-2 col-form-label">Nome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nomeservico" >
+                            <input type="text" class="form-control" id="nomeservico" value={servico.nomeServico}/>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="valorservico" class="col-sm-2 col-form-label">Valor</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="valorservico" step="0.01" >
+                            <input type="number" class="form-control" id="valorservico" step="0.01" value={servico.valor}/>
                         </div>
                     </div>
                 </div>
@@ -67,12 +74,13 @@ function show(servicos) {
                 </div>
             </div>
         </div>
-    </div></td>
-    </tr>
-     `)) 
+    </div></td></td>
+        </tr>
+      ))}
+        </tbody>
+      </table>
+    );
+  };
+};
 
-    
-    document.querySelector('tbody').innerHTML = output
- 
-    
-}
+export default App;
