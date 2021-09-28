@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e0a46dde-6bc9-49d8-b0cb-3fa654434953" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1yk1086SGBmzWbxcaPbWy7lWUU1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="show.run.dashboard.notification" value="false" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.HotelariaApplication">
+    <configuration name="ConsumoserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="consumoservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.consumoservice.ConsumoserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.discovery.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelariaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hotelaria" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.hotelaria.HotelariaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservaserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="reservaservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.reservaservice.ReservaserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServicosApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="servicos" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.servicos.ServicosApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TurismoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="turismo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rp4.turismo.TurismoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0a46dde-6bc9-49d8-b0cb-3fa654434953" name="Default Changelist" comment="" />
+      <created>1632780605670</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632780605670</updated>
+      <workItem from="1632780634831" duration="5538000" />
+      <workItem from="1632797811956" duration="328000" />
+      <workItem from="1632798737008" duration="27000" />
+      <workItem from="1632800051374" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
