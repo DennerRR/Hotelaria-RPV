@@ -1,0 +1,14 @@
+package com.rp4.evolucaodb.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.rp4.evolucaodb.model.Cliente;
+import com.rp4.evolucaodb.model.Funcionario;
+import com.rp4.evolucaodb.model.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+
+    Funcionario findFuncionarioById(Long id);
+
+    Cliente findClienteById(Long id);
+}
