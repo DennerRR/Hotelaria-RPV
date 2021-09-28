@@ -1,6 +1,6 @@
 package com.rp4.evolucaodb.interfaces;
 
-import com.rp4.evolucaodb.model.Produto;
+import com.rp4.evolucaodb.model_new.Produto;
 
 import java.util.List;
 

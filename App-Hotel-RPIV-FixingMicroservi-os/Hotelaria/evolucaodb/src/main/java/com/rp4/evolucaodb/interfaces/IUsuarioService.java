@@ -2,9 +2,9 @@ package com.rp4.evolucaodb.interfaces;
 
 import java.util.List;
 
-import com.rp4.evolucaodb.model.Cliente;
-import com.rp4.evolucaodb.model.Funcionario;
-import com.rp4.evolucaodb.model.Usuario;
+import com.rp4.evolucaodb.model_new.Cliente;
+import com.rp4.evolucaodb.model_new.Funcionario;
+import com.rp4.evolucaodb.model_new.Usuario;
 
 public interface IUsuarioService {
 

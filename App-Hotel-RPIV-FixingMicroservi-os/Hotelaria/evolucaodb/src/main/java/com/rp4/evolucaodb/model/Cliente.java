@@ -1,13 +1,10 @@
-package com.rp4.evolucaodb.model_new;
+package com.rp4.evolucaodb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-public class Funcionario extends Usuario {
-
-    @Column(name = "cargo")
-    private String cargo;
+public class Cliente extends Usuario {
 
     @Column(name = "cpf")
     private String cpf;
@@ -15,23 +12,17 @@ public class Funcionario extends Usuario {
     @Column(name = "telefone")
     private String telefone;
 
+    @Column(name = "endereco")
+    private String endereco;
 
-    public Funcionario(String email, String nome, String senha, String cpf, String telefone, String cargo) {
+    public Cliente(String email, String nome, String senha, String cpf, String telefone, String endereco) {
         super(email, nome, senha);
         this.cpf = cpf;
         this.telefone = telefone;
-        this.cargo = cargo;
+        this.endereco = endereco;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public Funcionario() {
+    public Cliente() {
         super();
     }
 
@@ -51,5 +42,11 @@ public class Funcionario extends Usuario {
         this.telefone = telefone;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
 
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 }

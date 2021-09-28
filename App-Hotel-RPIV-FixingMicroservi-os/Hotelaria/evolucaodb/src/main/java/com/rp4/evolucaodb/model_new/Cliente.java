@@ -1,4 +1,4 @@
-package com.rp4.evolucaodb.model;
+package com.rp4.evolucaodb.model_new;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

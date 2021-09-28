@@ -1,4 +1,4 @@
-package com.rp4.evolucaodb.model_new;
+package com.rp4.evolucaodb.model;
 
 
 import javax.persistence.*;

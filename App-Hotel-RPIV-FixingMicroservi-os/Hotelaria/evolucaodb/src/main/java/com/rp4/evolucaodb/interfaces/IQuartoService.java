@@ -1,8 +1,8 @@
 package com.rp4.evolucaodb.interfaces;
 
 
-import com.rp4.evolucaodb.model.Hotel;
-import com.rp4.evolucaodb.model.Quarto;
+import com.rp4.evolucaodb.model_new.Hotel;
+import com.rp4.evolucaodb.model_new.Quarto;
 
 import java.util.List;
 
