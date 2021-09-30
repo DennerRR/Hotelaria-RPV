@@ -18,14 +18,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Size(min = 6, max = 255, message = "no minimo 6 caracteres")
+    @Size(min = 2, max = 255, message = "Tamanho mínimo do nome: 2 caracteres")
     @Column(nullable = false)
     private String nomeUsuario;
 
     @Column(unique = true, nullable = false)
     private String email;
 
-    @Size(min = 8, message = "no minimo 8 caracteres")
+    @Size(min = 8, message = "Tamanho mínimo da senha: 8 caracteres")
     private String senha;
 
     @ElementCollection(fetch = FetchType.EAGER)

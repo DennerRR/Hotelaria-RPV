@@ -36,6 +36,8 @@ crud:
     routingkeyServico: crud.servico.routingkey
     routingkeyCidade: crud.cidade.routingkey
     routingkeyTurismo: crud.turismo.routingkey
+    authExchange: auth.exchange
+    signupQueue: auth.crud.usuario
 
 eureka:
   instance:
