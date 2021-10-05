@@ -5,7 +5,7 @@ public class ServicoDTO {
     private String servico;
     private double valor;
 
-    public ServicoDTO(){
+    public ServicoDTO() {
 
     }
 

@@ -20,11 +20,11 @@ public class HotelProducer {
 
 
     @Autowired
-    public HotelProducer(RabbitTemplate rabbitTemplate){
+    public HotelProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Hotel hotel){
+    public void producerMensagem(Hotel hotel) {
         rabbitTemplate.convertAndSend(exchange, routingkey, hotel);
 
     }

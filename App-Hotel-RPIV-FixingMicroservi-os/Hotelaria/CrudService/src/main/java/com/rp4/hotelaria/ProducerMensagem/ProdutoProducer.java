@@ -10,19 +10,19 @@ import org.springframework.stereotype.Component;
 public class ProdutoProducer {
 
     @Value("${crud.rabbitmq.exchange}")
-     String exchange;
+    String exchange;
 
     @Value("${crud.rabbitmq.routingkeyProduto}")
-     String routingkey;
+    String routingkey;
 
     private RabbitTemplate rabbitTemplate;
 
     @Autowired
-    public ProdutoProducer(RabbitTemplate rabbitTemplate){
+    public ProdutoProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Produto produto){
+    public void producerMensagem(Produto produto) {
         rabbitTemplate.convertAndSend(exchange, routingkey, produto);
     }
 }

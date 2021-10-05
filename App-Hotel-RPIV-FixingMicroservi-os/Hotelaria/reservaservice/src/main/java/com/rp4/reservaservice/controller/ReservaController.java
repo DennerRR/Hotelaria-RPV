@@ -29,7 +29,7 @@ public class ReservaController {
     private IHotelService hotelService;
 
     @Autowired
-    public ReservaController(IReservaService service,IQuartoService quartoService,IUsuarioService usuarioService,IHotelService hotelService) {
+    public ReservaController(IReservaService service, IQuartoService quartoService, IUsuarioService usuarioService, IHotelService hotelService) {
         this.reservaService = service;
         this.quartoService = quartoService;
         this.usuarioService = usuarioService;
@@ -57,7 +57,7 @@ public class ReservaController {
     @GetMapping("/reserva/{id}")
     public Reserva getReservaById(@PathVariable("id") Long id) {
         Reserva reserva = reservaService.findReservaById(id);
-       return reserva;
+        return reserva;
     }
 
     @GetMapping("/usuario/encontrar/{id}")

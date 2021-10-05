@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface ConsumoRepository extends JpaRepository<Consumo, Long> {
     Consumo findConsumoById(Long id);
+
     List<Consumo> findAllConsumoByUsuario(Usuario usuario);
 }

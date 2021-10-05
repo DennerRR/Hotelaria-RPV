@@ -40,7 +40,7 @@ public class ReservaController {
     @PostMapping("/salvar")
     @ApiOperation(value = "Cadastra uma reserva de serviço")
     public void salvarReserva(@RequestBody ReservaDTO reservaDTO) {
-        Servico servico= servicoService.findServicoById(reservaDTO.getIdServico());
+        Servico servico = servicoService.findServicoById(reservaDTO.getIdServico());
         Hotel hotel = hotelService.findHotelById(reservaDTO.getIdHotel());
         Usuario usuario = usuarioService.findUsuarioById(reservaDTO.getIdUsuario());
         Reserva reserva = new Reserva();
@@ -65,6 +65,7 @@ public class ReservaController {
         Reserva reserva = reservaService.findReservaById(id);
         return new ResponseEntity<>(reserva, HttpStatus.OK);
     }
+
     @GetMapping("/usuario/encontrar/{id}")
 
     public ResponseEntity<?> getReservaByUsuarioId(@PathVariable("id") Long id) {

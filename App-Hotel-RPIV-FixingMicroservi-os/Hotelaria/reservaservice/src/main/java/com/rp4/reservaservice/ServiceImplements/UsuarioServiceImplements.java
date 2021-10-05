@@ -12,7 +12,7 @@ public class UsuarioServiceImplements implements IUsuarioService {
 
     @Autowired
     public UsuarioServiceImplements(UsuarioRepository usuarioRepository) {
-    this.usuarioRepository = usuarioRepository;
+        this.usuarioRepository = usuarioRepository;
     }
 
     @Override

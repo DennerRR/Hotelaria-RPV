@@ -74,7 +74,7 @@ public class TurismoController {
     @ApiOperation(value = "Pegar turismos por hotel")
     public List<Turismo> findAllTurismoByHotel(@PathVariable("id") Long id) {
         Hotel hotel = hotelService.getHotelById(id);
-        List<Turismo> turismos=turismoService.findAllTurismoByHotel(hotel);
+        List<Turismo> turismos = turismoService.findAllTurismoByHotel(hotel);
 
         return turismos;
     }

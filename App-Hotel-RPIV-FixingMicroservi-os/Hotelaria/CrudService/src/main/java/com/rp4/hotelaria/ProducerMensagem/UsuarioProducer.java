@@ -18,11 +18,11 @@ public class UsuarioProducer {
 
 
     @Autowired
-    public UsuarioProducer(RabbitTemplate rabbitTemplate){
+    public UsuarioProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Usuario usuario){
+    public void producerMensagem(Usuario usuario) {
         rabbitTemplate.convertAndSend(exchange, routingkey, usuario);
 
     }

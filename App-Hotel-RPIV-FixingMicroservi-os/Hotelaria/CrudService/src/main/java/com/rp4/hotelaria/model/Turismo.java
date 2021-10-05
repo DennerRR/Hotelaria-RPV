@@ -1,7 +1,6 @@
 package com.rp4.hotelaria.model;
 
 
-
 import javax.persistence.*;
 import java.util.Date;
 

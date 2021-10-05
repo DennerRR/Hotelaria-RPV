@@ -29,7 +29,8 @@ public class ConsumoController {
         this.usuarioService = usuarioService;
         this.produtoService = produtoService;
     }
-    public void consumoSets(Consumo consumo, ConsumoDTO consumoDTO){
+
+    public void consumoSets(Consumo consumo, ConsumoDTO consumoDTO) {
 
         consumo.setId(consumoDTO.getId());
         consumo.setData(consumoDTO.getData());
@@ -38,7 +39,7 @@ public class ConsumoController {
 
     @PostMapping("/salvar")
     @ApiOperation(value = "Cadastra um consumo")
-    public void salvarConsumo(@RequestBody ConsumoDTO consumoDTO){
+    public void salvarConsumo(@RequestBody ConsumoDTO consumoDTO) {
         Consumo consumo = new Consumo();
         Produto produto = produtoService.findProdutoById(consumoDTO.getIdProduto());
         Usuario usuario = usuarioService.findUsuarioById(consumoDTO.getIdUsuario());
@@ -60,8 +61,11 @@ public class ConsumoController {
         Consumo consumo = consumoService.findConsumoById(id);
         return new ResponseEntity<>(consumo, HttpStatus.OK);
     }
+
     @DeleteMapping("/consumo/excluir/{id}")
-    public void deleteConsumo(@PathVariable("id")Long id){consumoService.deleteConsumo(id);}
+    public void deleteConsumo(@PathVariable("id") Long id) {
+        consumoService.deleteConsumo(id);
+    }
 
     @GetMapping("/usuario/encontrar/{id}")
     public ResponseEntity<?> getConsumoByUsuarioId(@PathVariable("id") Long id) {

@@ -2,7 +2,7 @@ package com.rp4.reservaservice.dto;
 
 
 public class QuartoDTO {
-    private  Long idQuarto;
+    private Long idQuarto;
 
     private double preco;
 

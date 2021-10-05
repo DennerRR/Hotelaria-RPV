@@ -7,10 +7,10 @@ public class ProdutoDTO {
     private int quantidade;
     private double valor;
 
-    public ProdutoDTO(){
+    public ProdutoDTO() {
     }
 
-    public ProdutoDTO(long id, String nome, int quantidade, double valor){
+    public ProdutoDTO(long id, String nome, int quantidade, double valor) {
         this.id = id;
         this.nome = nome;
         this.quantidade = quantidade;

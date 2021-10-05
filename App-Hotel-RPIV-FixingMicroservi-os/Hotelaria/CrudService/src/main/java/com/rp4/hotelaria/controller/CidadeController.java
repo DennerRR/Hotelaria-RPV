@@ -29,37 +29,38 @@ public class CidadeController {
 
     @PostMapping("/salvar")
     @ApiOperation(value = "Salvar uma cidade")
-    public void salvarCidade(@RequestBody CidadeDTO cidadeDTO){
-         Cidade cidade = new Cidade();
+    public void salvarCidade(@RequestBody CidadeDTO cidadeDTO) {
+        Cidade cidade = new Cidade();
         cidade.setId(cidadeDTO.getId());
         cidade.setNome(cidadeDTO.getNome());
         cidade.setDdd(cidadeDTO.getDdd());
         cidadeService.saveCidade(cidade);
 
     }
+
     @PutMapping("/cidade/atualizar")
     @ApiOperation(value = "Atualizar cidade")
-    public Cidade updateCidade(@RequestBody Cidade cidade){
+    public Cidade updateCidade(@RequestBody Cidade cidade) {
         return cidadeService.updateCidade(cidade);
     }
 
     @GetMapping("/cidade/{id}")
     @ApiOperation(value = "Retornar uma cidade pelo id")
-    public ResponseEntity<?> pegarCidadePeloId(@PathVariable("id") Long id){
+    public ResponseEntity<?> pegarCidadePeloId(@PathVariable("id") Long id) {
         Cidade cidade = cidadeService.findCidadeById(id);
         return new ResponseEntity<>(cidade, HttpStatus.OK);
     }
 
     @GetMapping("/todas/cidades")
     @ApiOperation(value = "Retorna uma lista de Cidades")
-    public List<Cidade> pegarTodasCidades(){
+    public List<Cidade> pegarTodasCidades() {
         List<Cidade> cidades = cidadeService.findAllCidade();
         return cidades;
     }
 
     @DeleteMapping("/cidade/excluir/{id}")
     @ApiOperation(value = "Deletar cidade pelo id")
-    public void deletarCidade(@PathVariable("id")Long id){
+    public void deletarCidade(@PathVariable("id") Long id) {
         cidadeService.deleteCidade(id);
 
     }

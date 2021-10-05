@@ -10,25 +10,25 @@ import org.springframework.stereotype.Component;
 public class TurismoProducer {
 
 
-        @Value("${crud.rabbitmq.exchange}")
-        String exchange;
+    @Value("${crud.rabbitmq.exchange}")
+    String exchange;
 
-        @Value("${crud.rabbitmq.routingkeyTurismo}")
-        String routingkey;
+    @Value("${crud.rabbitmq.routingkeyTurismo}")
+    String routingkey;
 
-        private RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
 
-        @Autowired
-        public TurismoProducer(RabbitTemplate rabbitTemplate){
-            this.rabbitTemplate = rabbitTemplate;
-        }
+    @Autowired
+    public TurismoProducer(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
-        public void producerMensagem(Turismo turismo){
-            rabbitTemplate.convertAndSend(exchange, routingkey, turismo);
-
-        }
-
+    public void producerMensagem(Turismo turismo) {
+        rabbitTemplate.convertAndSend(exchange, routingkey, turismo);
 
     }
+
+
+}
 

@@ -15,9 +15,10 @@ public class ConsumoServiceImplements implements IConsumoService {
     private ConsumoRepository consumoRepository;
 
     @Autowired
-    public ConsumoServiceImplements(ConsumoRepository consumoRepository){
+    public ConsumoServiceImplements(ConsumoRepository consumoRepository) {
         this.consumoRepository = consumoRepository;
     }
+
     @Override
     public void saveConsumo(Consumo consumo) {
         consumoRepository.save(consumo);

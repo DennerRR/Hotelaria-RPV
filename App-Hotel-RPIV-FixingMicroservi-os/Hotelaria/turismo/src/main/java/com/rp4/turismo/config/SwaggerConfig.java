@@ -16,31 +16,31 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 
 @Configuration
-    @EnableSwagger2
-    public class SwaggerConfig {
+@EnableSwagger2
+public class SwaggerConfig {
 
-        @Bean
-        public Docket hotelApi() {
-            return new Docket(DocumentationType.SWAGGER_2)
-                    .select()
-                    .apis(RequestHandlerSelectors.basePackage("com.rp4.turismo"))
-                    .paths(regex("/api.*"))
-                    .build()
-                    .apiInfo(metaInfo());
-        }
-
-        private ApiInfo metaInfo() {
-            ApiInfo apiInfo = new ApiInfo(
-                    "Reserva API Rest",
-                    "API REST de reserva de passeios turisticos",
-                    "1.0",
-                    "Terms of service",
-                    new Contact("Denner Ramiro Ribeiro",
-                            "https://github.com/DennerRR", "dennerribeiro.aluno@unipampa.edu.br"),
-                    "Apache license version 2.0",
-                    "https://www.apache.org/license.html", new ArrayList<VendorExtension>()
-            );
-            return apiInfo;
-        }
+    @Bean
+    public Docket hotelApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.rp4.turismo"))
+                .paths(regex("/api.*"))
+                .build()
+                .apiInfo(metaInfo());
     }
+
+    private ApiInfo metaInfo() {
+        ApiInfo apiInfo = new ApiInfo(
+                "Reserva API Rest",
+                "API REST de reserva de passeios turisticos",
+                "1.0",
+                "Terms of service",
+                new Contact("Denner Ramiro Ribeiro",
+                        "https://github.com/DennerRR", "dennerribeiro.aluno@unipampa.edu.br"),
+                "Apache license version 2.0",
+                "https://www.apache.org/license.html", new ArrayList<VendorExtension>()
+        );
+        return apiInfo;
+    }
+}
 
