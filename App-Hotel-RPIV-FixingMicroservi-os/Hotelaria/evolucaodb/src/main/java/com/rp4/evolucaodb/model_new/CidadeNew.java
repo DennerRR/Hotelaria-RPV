@@ -5,15 +5,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_registro_cidade")
-public class Cidade {
+@Table(name = "cidade")
+public class CidadeNew {
 
     @Id
-    @Column(name = "id_Cidade")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome_Cidade",nullable = false)
+    @Column(name = "nome",nullable = false)
     private String nome;
 
     @Column(name = "ddd")
@@ -22,10 +22,10 @@ public class Cidade {
     @OneToMany()
     private List<Hotel> hoteis;
 
-    public Cidade() {
+    public CidadeNew() {
     }
 
-    public Cidade(long id, String nome, String ddd, List<Hotel> hoteis) {
+    public CidadeNew(long id, String nome, String ddd, List<Hotel> hoteis) {
         this.id = id;
         this.nome = nome;
         this.ddd = ddd;
