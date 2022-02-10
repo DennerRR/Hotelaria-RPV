@@ -19,7 +19,7 @@ public class ProdutoServiceImplements implements IProdutoService {
     private ProdutoProducer produtoProducer;
 
     @Autowired
-    public ProdutoServiceImplements(ProdutoRepository produtoRepository, ProdutoProducer produtoProducer){
+    public ProdutoServiceImplements(ProdutoRepository produtoRepository, ProdutoProducer produtoProducer) {
         this.produtoRepository = produtoRepository;
         this.produtoProducer = produtoProducer;
     }
@@ -27,7 +27,7 @@ public class ProdutoServiceImplements implements IProdutoService {
     @Override
     @Transactional
     public void salvarProduto(Produto produto) {
-        Produto produtoSalvo =  produtoRepository.save(produto);
+        Produto produtoSalvo = produtoRepository.save(produto);
         produtoProducer.producerMensagem(produtoSalvo);
     }
 
@@ -43,7 +43,7 @@ public class ProdutoServiceImplements implements IProdutoService {
 
     @Override
     public void excluirProduto(Long id) {
-    produtoRepository.deleteById(id);
+        produtoRepository.deleteById(id);
     }
 
     @Override

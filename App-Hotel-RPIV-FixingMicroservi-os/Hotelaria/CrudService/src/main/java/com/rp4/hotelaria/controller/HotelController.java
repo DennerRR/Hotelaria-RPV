@@ -64,9 +64,10 @@ public class HotelController {
         List<Hotel> hoteis = hotelService.pegarTodosHoteis();
         return hoteis;
     }
+
     @GetMapping("/cidade/hoteis/{id}")
     @ApiOperation(value = "Pegar hoteis por cidade")
-    public List<Hotel> findAllHotelByCidade(@PathVariable("id")Long id){
+    public List<Hotel> findAllHotelByCidade(@PathVariable("id") Long id) {
         Cidade cidade = cidadeService.findCidadeById(id);
         List<Hotel> hoteis = hotelService.findAllHotelByCidade(cidade);
         return hoteis;

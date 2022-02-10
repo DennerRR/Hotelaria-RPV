@@ -16,11 +16,12 @@ public class MensagemConfig {
     String exchange;
 
     @Bean
-    public Exchange exchange(){
+    public Exchange exchange() {
         return ExchangeBuilder.directExchange(exchange).durable(true).build();
     }
+
     @Bean
-    public MessageConverter jsonMessageConverter(){
+    public MessageConverter jsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
 }

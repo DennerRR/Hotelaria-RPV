@@ -11,18 +11,18 @@ import org.springframework.amqp.support.converter.MessageConverter;
 @Configuration
 public class MensagemConfig {
 
-        @Value("${crud.rabbitmq.exchange}")
-        String exchange;
+    @Value("${crud.rabbitmq.exchange}")
+    String exchange;
 
-        @Bean
-        public Exchange exchange() {
-            return ExchangeBuilder.directExchange(exchange).durable(true).build();
-        }
+    @Bean
+    public Exchange exchange() {
+        return ExchangeBuilder.directExchange(exchange).durable(true).build();
+    }
 
-        @Bean
-        public MessageConverter jsonMessageConverter() {
-            return new Jackson2JsonMessageConverter();
-        }
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
 }
 
 

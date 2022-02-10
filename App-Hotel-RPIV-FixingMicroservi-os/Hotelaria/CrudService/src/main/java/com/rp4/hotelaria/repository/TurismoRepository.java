@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface TurismoRepository extends JpaRepository<Turismo, Long> {
-        Turismo findTurismoById(Long id);
-        List<Turismo> findAllByHotel(Hotel hotel);
+    Turismo findTurismoById(Long id);
+
+    List<Turismo> findAllByHotel(Hotel hotel);
 }

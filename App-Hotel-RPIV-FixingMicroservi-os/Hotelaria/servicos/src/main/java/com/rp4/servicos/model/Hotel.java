@@ -10,10 +10,9 @@ public class Hotel {
     private Long idHotel;
 
 
-
-
     public Hotel() {
     }
+
     public Hotel(Long idHotel) {
         this.idHotel = idHotel;
     }

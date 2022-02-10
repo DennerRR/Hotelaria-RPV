@@ -27,7 +27,6 @@ public class Quarto {
     private String adicionalDoQuarto;
 
 
-
     public Quarto() {
     }
 

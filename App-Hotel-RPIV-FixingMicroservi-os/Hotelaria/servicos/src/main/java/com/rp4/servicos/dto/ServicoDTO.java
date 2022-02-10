@@ -1,7 +1,7 @@
 package com.rp4.servicos.dto;
 
 public class ServicoDTO {
-    private  Long id;
+    private Long id;
     private String servico;
     private double preco;
 

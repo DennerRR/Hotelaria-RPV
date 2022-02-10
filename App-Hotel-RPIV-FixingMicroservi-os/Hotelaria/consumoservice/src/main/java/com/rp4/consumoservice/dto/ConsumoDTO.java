@@ -1,8 +1,6 @@
 package com.rp4.consumoservice.dto;
 
 
-
-
 import java.util.Date;
 
 public class ConsumoDTO {

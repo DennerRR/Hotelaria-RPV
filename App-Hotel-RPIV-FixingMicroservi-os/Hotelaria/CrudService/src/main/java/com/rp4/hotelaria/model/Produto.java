@@ -21,7 +21,7 @@ public class Produto {
     @Column(name = "valor")
     private double valor;
 
-    public Produto(){
+    public Produto() {
 
     }
 
