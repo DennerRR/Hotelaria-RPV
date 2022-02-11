@@ -1,4 +1,0 @@
-#Fri Apr 16 00:23:39 BRT 2021
-base.0=/home/evandro/Documentos/GitHub/App-Hotel-RPIV/FrontEnd/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
