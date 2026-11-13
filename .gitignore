@@ -1,0 +1,16 @@
+# Java / Maven
+target/
+bin/
+*.class
+*.jar
+!**/.mvn/wrapper/maven-wrapper.jar
+# Node
+node_modules/
+build/
+# IDEs e sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+# Configurações locais
+.env
